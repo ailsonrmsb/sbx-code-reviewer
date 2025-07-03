@@ -1,0 +1,8 @@
+server:
+  port: 2025
+  servlet:
+    context-path: /sbx-code-review
+
+spring:
+  application:
+    name: sbx-code-reviewer
