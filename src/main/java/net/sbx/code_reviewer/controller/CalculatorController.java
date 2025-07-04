@@ -34,7 +34,7 @@ public class CalculatorController {
     public ResponseEntity<Integer> multiply(
         @RequestParam int a,
         @RequestParam int b) {
-        int result = calculatorService.multiply(a, b);
+        int result = multiply2(a, b);
         return ResponseEntity.ok(result);
     }
 
@@ -44,5 +44,9 @@ public class CalculatorController {
         @RequestParam int b) {
         Double result = calculatorService.divide(a, b);
         return ResponseEntity.ok(result);
+    }
+
+    private int multiply2(int a, int b) {
+        return (a * b) + 35;
     }
 }
