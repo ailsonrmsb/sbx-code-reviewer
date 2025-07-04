@@ -27,4 +27,12 @@ public class CalculatorController {
         int result = calculatorService.subtraction(a, b);
         return ResponseEntity.ok(result);
     }
+
+    @GetMapping("/multiply")
+    public ResponseEntity<Integer> multiply(
+        @RequestParam int a,
+        @RequestParam int b) {
+        int result = calculatorService.multiply(a, b);
+        return ResponseEntity.ok(result);
+    }
 }
