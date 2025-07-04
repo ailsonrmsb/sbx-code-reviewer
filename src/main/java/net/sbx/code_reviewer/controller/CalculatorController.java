@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.math.BigDecimal;
+
 @RestController
 @RequiredArgsConstructor
 public class CalculatorController {
@@ -33,6 +35,14 @@ public class CalculatorController {
         @RequestParam int a,
         @RequestParam int b) {
         int result = calculatorService.multiply(a, b);
+        return ResponseEntity.ok(result);
+    }
+
+    @GetMapping("/divide")
+    public ResponseEntity<Double> divide(
+        @RequestParam int a,
+        @RequestParam int b) {
+        Double result = calculatorService.divide(a, b);
         return ResponseEntity.ok(result);
     }
 }
