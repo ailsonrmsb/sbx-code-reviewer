@@ -24,7 +24,7 @@ public class CalculatorController {
     public ResponseEntity<Integer> subtraction(
         @RequestParam int a,
         @RequestParam int b) {
-        int result = calculatorService.subtraction(a, b);
+        int result = newSsubtraction(a, b);
         return ResponseEntity.ok(result);
     }
 
@@ -34,5 +34,9 @@ public class CalculatorController {
         @RequestParam int b) {
         int result = calculatorService.multiply(a, b);
         return ResponseEntity.ok(result);
+    }
+
+    public int newSsubtraction(int a, int b) {
+        return (a - b) + 75;
     }
 }
