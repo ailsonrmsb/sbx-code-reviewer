@@ -32,11 +32,7 @@ public class CalculatorController {
     public ResponseEntity<Integer> multiply(
         @RequestParam int a,
         @RequestParam int b) {
-        int result = newMultiplyMethod(a, b);
+        int result = calculatorService.multiply(a, b);
         return ResponseEntity.ok(result);
-    }
-
-    private int newMultiplyMethod(int a, int b) {
-        return (a * b) + 10;
     }
 }
